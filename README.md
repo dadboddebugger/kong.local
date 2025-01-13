@@ -70,8 +70,8 @@ curl -X POST http://localhost:8001/services/bank-ai-api/routes \
 ```
 ```
 curl -X POST http://localhost:8001/services/bank-ai-api/plugins \
-   --header "accept: application/json" \                                 
-   --header "Content-Type: application/json" \                                                                                                              
+   --header "accept: application/json" \
+   --header "Content-Type: application/json" \
    --data '
    {
  "name": "ai-proxy",
@@ -79,7 +79,7 @@ curl -X POST http://localhost:8001/services/bank-ai-api/plugins \
    "route_type": "llm/v1/chat",
    "auth": {
      "header_name": "Authorization",
-     "header_value": "Bearer <OPEN_AI_KEY>"
+     "header_value": "Bearer <OPENAI_API_TOKEN>"
    },
    "model": {
      "provider": "openai",
@@ -89,9 +89,9 @@ curl -X POST http://localhost:8001/services/bank-ai-api/plugins \
        "temperature": 1.0
      }
    }
+ }
 }
-
-' 
+   ' 
 ```
 ```
 curl -i -X POST http://localhost:8001/services/bank-ai-api/plugins \
