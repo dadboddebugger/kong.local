@@ -14,7 +14,8 @@ curl -i -X POST http://localhost:8001/services --data name=service-a  --data url
 curl -i -X POST http://localhost:8001/services/service-a/routes --data "paths[]=/svca"
 curl -i -X POST http://localhost:8001/services/service-a/plugins --data name=key-auth
 curl -i -X POST http://localhost:8001/services/service-a/plugins --data name=rate-limiting --data config.second=5 --data config.hour=100 --data config.limit_by=consumer
-
+```
+```
 curl -i -X POST http://localhost:8001/services/service-a/plugins \
     --header "accept: application/json" \
     --header "Content-Type: application/json" \
@@ -38,7 +39,8 @@ curl -i -X POST http://localhost:8001/services --data name=service-b  --data url
 curl -i -X POST http://localhost:8001/services/service-b/routes --data "paths[]=/svcb"
 curl -i -X POST http://localhost:8001/services/service-b/plugins --data name=key-auth
 curl -i -X POST http://localhost:8001/services/service-b/plugins --data name=rate-limiting --data config.second=5 --data config.hour=100 --data config.limit_by=consumer
-
+```
+```
 curl -i -X POST http://localhost:8001/services/service-b/plugins \
     --header "accept: application/json" \
     --header "Content-Type: application/json" \
@@ -62,7 +64,8 @@ curl -X POST http://localhost:8001/services/bank-ai-api/routes \
   --data "name=openai-chat" \                                            
   --data "paths[]=~/openai-chat$"
   
-  
+```
+```
 curl -X POST http://localhost:8001/services/bank-ai-api/plugins \
    --header "accept: application/json" \                                 
    --header "Content-Type: application/json" \                                                                                                              
@@ -86,8 +89,8 @@ curl -X POST http://localhost:8001/services/bank-ai-api/plugins \
 }
 
 ' 
-
-
+```
+```
 curl -i -X POST http://localhost:8001/services/bank-ai-api/plugins \
     --header "accept: application/json" \
     --header "Content-Type: application/json" \
@@ -104,7 +107,8 @@ curl -i -X POST http://localhost:8001/services/bank-ai-api/plugins \
 }
     '
  
-
+```
+```
 curl -i -X POST http://localhost:8001/services/bank-ai-api/plugins \
    -F "name=pre-function" \
    -F "config.access[1]=@custom-span.lua"
@@ -114,7 +118,8 @@ curl -i -X POST http://localhost:8001/services/bank-ai-api/plugins \
 ```
 curl -i -X POST http://localhost:8001/consumers --data username=free-user
 curl -i -X POST http://localhost:8001/consumers/free-user/key-auth --data key=free-key
-
+```
+```
 curl -i -X POST http://localhost:8001/consumers --data username=premium-user
 curl -i -X POST http://localhost:8001/consumers/premium-user/key-auth --data key=premium-key  
 ```
