@@ -60,6 +60,9 @@ curl -i -X POST http://localhost:8001/services/service-b/plugins \
 
 ## Service Bank-AI-API
 ```
+curl -i -X POST http://localhost:8001/services --data name=bank-ai-api  --data url=http://host.docker.internal:3200
+```
+```
 curl -X POST http://localhost:8001/services/bank-ai-api/routes \ 
   --data "name=openai-chat" \                                            
   --data "paths[]=~/openai-chat$"
