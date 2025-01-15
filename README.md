@@ -127,6 +127,19 @@ curl -i -X POST http://localhost:8001/consumers --data username=premium-user
 curl -i -X POST http://localhost:8001/consumers/premium-user/key-auth --data key=premium-key  
 ```
 
+## Enable API key lua fx
+```    
+curl -i -X POST http://localhost:8001/plugins \
+   -F "name=pre-function" \
+   -F "config.access[1]=@apikey-custom-span.lua"    
+```
+
+```
+curl -i -X POST http://localhost:8001/plugins \
+   -F "name=pre-function" \
+   -F "config.access[1]=@jwt-header-span.lua"
+```
+
 ## Test
 ```
 curl -i -X POST http://localhost:8000/svca/svcb/openai-chat -H 'apikey: premium-key' -H 'Content-Type: application/json'  --data-raw '{ "messages": [ { "role": "system", "content": "You are a mathematician" }, { "role": "user", "content": "What is the capital of India?"} ] }'
